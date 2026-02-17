@@ -7,6 +7,7 @@ void executeCommand(){
         case CROSS: executeCROSS(); break;
         case DISTINCT: executeDISTINCT(); break;
         case EXPORT: executeEXPORT(); break;
+        case DEGREE: executeDEGREE(); break;
         case INDEX: executeINDEX(); break;
         case JOIN: executeJOIN(); break;
         case LIST: executeLIST(); break;
@@ -17,6 +18,7 @@ void executeCommand(){
         case SELECTION: executeSELECTION(); break;
         case SORT: executeSORT(); break;
         case SOURCE: executeSOURCE(); break;
+        case PATHQUERY: executePATH(); break;
         default: cout<<"PARSING ERROR"<<endl;
     }
 

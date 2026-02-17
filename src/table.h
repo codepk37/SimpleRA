@@ -1,3 +1,5 @@
+#ifndef TABLE_H
+#define TABLE_H
 #include "cursor.h"
 
 enum IndexingStrategy
@@ -87,3 +89,4 @@ void writeRow(vector<T> row)
     fout.close();
 }
 };
+#endif

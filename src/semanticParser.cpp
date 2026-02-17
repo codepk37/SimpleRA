@@ -7,6 +7,7 @@ bool semanticParse(){
         case CROSS: return semanticParseCROSS();
         case DISTINCT: return semanticParseDISTINCT();
         case EXPORT: return semanticParseEXPORT();
+        case DEGREE: return semanticParseDEGREE();
         case INDEX: return semanticParseINDEX();
         case JOIN: return semanticParseJOIN();
         case LIST: return semanticParseLIST();
@@ -17,6 +18,7 @@ bool semanticParse(){
         case SELECTION: return semanticParseSELECTION();
         case SORT: return semanticParseSORT();
         case SOURCE: return semanticParseSOURCE();
+        case PATHQUERY: return semanticParsePATH();
         default: cout<<"SEMANTIC ERROR"<<endl;
     }
 

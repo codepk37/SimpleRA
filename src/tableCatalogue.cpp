@@ -12,6 +12,11 @@ void TableCatalogue::deleteTable(string tableName)
     delete this->tables[tableName];
     this->tables.erase(tableName);
 }
+void TableCatalogue::removeTable(string tableName)
+{
+    logger.log("TableCatalogue::removeTable"); 
+    this->tables.erase(tableName);
+}
 Table* TableCatalogue::getTable(string tableName)
 {
     logger.log("TableCatalogue::getTable"); 
@@ -21,8 +26,10 @@ Table* TableCatalogue::getTable(string tableName)
 bool TableCatalogue::isTable(string tableName)
 {
     logger.log("TableCatalogue::isTable"); 
+    cout << tableName << endl;
     if (this->tables.count(tableName))
         return true;
+    logger.log("damn");
     return false;
 }
 

@@ -3,12 +3,13 @@
 Cursor::Cursor(string tableName, int pageIndex)
 {
     logger.log("Cursor::Cursor");
+    // cout << tableName << " " << pageIndex << endl;
     this->page = bufferManager.getPage(tableName, pageIndex);
     this->pagePointer = 0;
     this->tableName = tableName;
     this->pageIndex = pageIndex;
 }
-
+ 
 /**
  * @brief This function reads the next row from the page. The index of the
  * current row read from the page is indicated by the pagePointer(points to row

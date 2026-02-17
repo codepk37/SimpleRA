@@ -25,8 +25,12 @@ bool syntacticParse()
         return syntacticParseRENAME();
     else if(possibleQueryType == "EXPORT")
         return syntacticParseEXPORT();
+    else if(possibleQueryType == "DEGREE")
+        return syntacticParseDEGREE();
     else if(possibleQueryType == "SOURCE")
         return syntacticParseSOURCE();
+    else if(tokenizedQuery.size() >=6 && tokenizedQuery[2] == "PATH")
+        return syntacticParsePATH();
     else
     {
         string resultantRelationName = possibleQueryType;
@@ -114,6 +118,17 @@ void ParsedQuery::clear()
     this->sortRelationName = "";
 
     this->sourceFileName = "";
+    this->isGraph = false;
+    this->graphType = ' ';
+
+    this->pathResultGraphName = "";
+    this->pathGraphName = "";
+    this->pathSrcNode = 0;
+    this->pathDstNode = 0;
+    this->pathConditions.clear();
+
+    this->degreeGraphName = "";
+    this->degreeNodeId = 0;
 }
 
 /**
@@ -129,6 +144,17 @@ bool isFileExists(string tableName)
     string fileName = "../data/" + tableName + ".csv";
     struct stat buffer;
     return (stat(fileName.c_str(), &buffer) == 0);
+}
+
+bool isGraphExists(string graphName, char graphType)
+{
+    
+    string nodesFile = "../data/" + graphName + "_Nodes_" + graphType + ".csv";
+    string edgesFile = "../data/" + graphName + "_Edges_" + graphType + ".csv";
+    struct stat buffer;
+    bool nodesExists = (stat(nodesFile.c_str(), &buffer) == 0);
+    bool edgesExists = (stat(edgesFile.c_str(), &buffer) == 0);
+    return nodesExists && edgesExists;
 }
 
 /**

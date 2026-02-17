@@ -1,3 +1,5 @@
+#ifndef TABLECATALOGUE_H
+#define TABLECATALOGUE_H
 #include "table.h"
 
 /**
@@ -15,9 +17,11 @@ public:
     TableCatalogue() {}
     void insertTable(Table* table);
     void deleteTable(string tableName);
+    void removeTable(string tableName);
     Table* getTable(string tableName);
     bool isTable(string tableName);
     bool isColumnFromTable(string columnName, string tableName);
     void print();
     ~TableCatalogue();
 };
+#endif

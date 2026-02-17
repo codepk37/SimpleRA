@@ -1,3 +1,5 @@
+#ifndef SEMANTICPARSER_H
+#define SEMANTICPARSER_H
 #include"syntacticParser.h"
 
 bool semanticParse();
@@ -6,6 +8,7 @@ bool semanticParseCLEAR();
 bool semanticParseCROSS();
 bool semanticParseDISTINCT();
 bool semanticParseEXPORT();
+bool semanticParseDEGREE();
 bool semanticParseINDEX();
 bool semanticParseJOIN();
 bool semanticParseLIST();
@@ -16,3 +19,5 @@ bool semanticParseRENAME();
 bool semanticParseSELECTION();
 bool semanticParseSORT();
 bool semanticParseSOURCE();
+bool semanticParsePATH();
+#endif
